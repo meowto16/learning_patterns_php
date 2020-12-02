@@ -7,7 +7,7 @@ use App\DesignPatterns\Behavioral\Strategy\SalaryManager;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 
-class BehavioralPatternsController
+class BehavioralPatternsController extends Controller
 {
 
     public function Strategy()
