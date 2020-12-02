@@ -10,17 +10,9 @@ class FundamentalPatternsController extends Controller
 {
     /**
      * Демонстрация шаблона проектирования "Контейнер свойств (англ. property container)
-     *
-     * @url http://localhost:8100/fundamentals/property-container
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \Exception
      */
     public function PropertyContainer()
     {
-        $name = 'Контейнер свойств';
-//        $description = PropertyContainer::getDescription();
-
         $item = new BlogPost();
 
         $item->setTitle('Заголовок статьи');
@@ -34,19 +26,16 @@ class FundamentalPatternsController extends Controller
         $item->addProperty('read_only', true);
         $item->deleteProperty('read_only');
 
-        dd(compact('name', 'item'));
+        \Debugbar::info($item);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     /**
      * Демонстрация шаблона проектирования - "Делегирование"
-     *
-     * @url http://localhost:8100/fundamentals/delegation
-     *
      */
     public function Delegation()
     {
-        $name = 'Делегирование (Delegation)';
-
         $appMessenger = new AppMessenger();
 
         $appMessenger->setSender('sender@email.net')
@@ -62,21 +51,26 @@ class FundamentalPatternsController extends Controller
 
         \DebugBar::info($appMessenger);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     /**
      * Демонстрация шаблона проектирования - "Канал событий (Event Channel)"
-     *
-     * @url http://localhost:8100/fundamentals/event-channel
      */
     public function EventChannel()
     {
-        $name = 'Канал событий (event channel)';
-
         $item = new EventChannelJob();
         $item->run();
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    /**
+     * Демонстрация шаблона проектирования - "Интерфейс (Interface)"
+     * ... В видео не было кода
+     */
+    public function Interface()
+    {
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 }

@@ -42,7 +42,7 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($result);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     public function FactoryMethod()
@@ -55,7 +55,7 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($result);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     public function StaticFactory()
@@ -67,7 +67,7 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($appMailMessenger, $appPhoneMessenger);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     public function SimpleFactory()
@@ -81,7 +81,7 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($appMailMessenger, $appPhoneMessenger);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 
     public function Singleton()
@@ -116,6 +116,6 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($result);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => __FUNCTION__]);
     }
 }

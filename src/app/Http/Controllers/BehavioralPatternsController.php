@@ -24,6 +24,6 @@ class BehavioralPatternsController extends Controller
 
         \Debugbar::info($result);
 
-        return view('welcome');
+        return view('welcome', ['pattern' => 'Strategy']);
     }
 }
