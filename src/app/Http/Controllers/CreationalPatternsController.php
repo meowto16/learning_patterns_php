@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
+use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
@@ -115,6 +117,29 @@ class CreationalPatternsController extends Controller
         //< Laravel-way способ создания Одиночки
 
         \Debugbar::info($result);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function Multiton()
+    {
+//        $name = 'Пул одиночек (Multiton)';
+
+        $multiton[] = SimpleMultiton::getInstance('mysql')->setTest('mysql-test');
+        $multiton[] = SimpleMultiton::getInstance('mongo');
+
+        $multiton[] = SimpleMultiton::getInstance('mysql');
+        $multiton[] = SimpleMultiton::getInstance('mongo')->setTest('mongo-test');
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init';
+        $multiton[] = $simpleMultitonNext;
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init2';
+        $multiton[] = $simpleMultitonNext;
+
+        \Debugbar::info($multiton);
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }
