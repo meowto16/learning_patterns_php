@@ -26,6 +26,7 @@ Route::group(['prefix' => 'creational', 'as' => 'creational.'], function() {
     Route::get('static-factory', [CreationalPatternsController::class, 'StaticFactory'])->name('staticFactory');
     Route::get('simple-factory', [CreationalPatternsController::class, 'SimpleFactory'])->name('simpleFactory');
     Route::get('singleton', [CreationalPatternsController::class, 'Singleton'])->name('singleton');
+    Route::get('prototype', [CreationalPatternsController::class, 'Prototype'])->name('prototype');
 });
 Route::group(['prefix' => 'behavioral', 'as' => 'behavioral.'], function() {
     Route::get('strategy', [BehavioralPatternsController::class, 'Strategy'])->name('strategy');

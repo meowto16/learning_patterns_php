@@ -20,6 +20,7 @@
                 'simpleFactory' => ['name' => 'Простая фабрика (Simple factory)', 'route' => route('creational.simpleFactory')],
                 'singleton' => ['name' => 'Одиночка (Singleton)', 'route' => route('creational.singleton')],
                 'staticFactory' => ['name' => 'Статичная фабрика (Static factory)', 'route' => route('creational.staticFactory')],
+                'Prototype' => ['name' => 'Прототип (Prototype)', 'route' => route('creational.prototype')],
             ]
         ],
         'behavioral' => [
