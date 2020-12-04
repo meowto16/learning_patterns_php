@@ -15,6 +15,7 @@
                 'abstractFactory' => ['name' => 'Абстрактная фабрика (Abstract factory)', 'route' => route('creational.abstractFactory')],
                 'builder' => ['name' => 'Строитель (Builder)', 'route' => route('creational.builder')],
                 'factoryMethod' => ['name' => 'Фабричный метод (Factory method)', 'route' => route('creational.factoryMethod')],
+                'lazyInitialization' => ['name' => 'Ленивая загрузка (Lazy initialization)', 'route' => route('creational.lazyInitialization')],
                 'multiton' => ['name' => 'Мультитон (Multiton)', 'route' => route('creational.multiton')],
                 'simpleFactory' => ['name' => 'Простая фабрика (Simple factory)', 'route' => route('creational.simpleFactory')],
                 'singleton' => ['name' => 'Одиночка (Singleton)', 'route' => route('creational.singleton')],

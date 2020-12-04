@@ -7,6 +7,7 @@ use App\DesignPatterns\Creational\Builder\BlogPostBuilder;
 use App\DesignPatterns\Creational\Builder\BlogPostManager;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
@@ -164,6 +165,19 @@ class CreationalPatternsController extends Controller
         $posts[] = $manager->createNewPostCats();
 
         \Debugbar::info($posts);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function LazyInitialization()
+    {
+        $lazyLoad = new LazyInitialization();
+
+        $user[] = $lazyLoad->getUser()->name;
+        $user[] = $lazyLoad->getUser()->email;
+        $user[] = $lazyLoad->getUser()->created_at;
+
+        \Debugbar::info($user);
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }
