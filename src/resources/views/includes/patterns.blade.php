@@ -13,6 +13,7 @@
             'name' => 'Порождающие <br>(Creational)',
             'routes' => [
                 'abstractFactory' => ['name' => 'Абстрактная фабрика (Abstract factory)', 'route' => route('creational.abstractFactory')],
+                'builder' => ['name' => 'Строитель (Builder)', 'route' => route('creational.builder')],
                 'factoryMethod' => ['name' => 'Фабричный метод (Factory method)', 'route' => route('creational.factoryMethod')],
                 'multiton' => ['name' => 'Мультитон (Multiton)', 'route' => route('creational.multiton')],
                 'simpleFactory' => ['name' => 'Простая фабрика (Simple factory)', 'route' => route('creational.simpleFactory')],

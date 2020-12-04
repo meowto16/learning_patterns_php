@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
+use App\DesignPatterns\Creational\Builder\BlogPostBuilder;
+use App\DesignPatterns\Creational\Builder\BlogPostManager;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogForm;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
@@ -140,6 +142,28 @@ class CreationalPatternsController extends Controller
         $multiton[] = $simpleMultitonNext;
 
         \Debugbar::info($multiton);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function Builder()
+    {
+//        $name = 'Строитель (Builder)';
+
+        $builder = new BlogPostBuilder();
+
+        $posts[] = $builder
+            ->setTitle('from Builder')
+            ->getBlogPost();
+
+        $manager = new BlogPostManager();
+        $manager->setBuilder($builder);
+
+        $posts[] = $manager->createCleanPost();
+        $posts[] = $manager->createNewPostIt();
+        $posts[] = $manager->createNewPostCats();
+
+        \Debugbar::info($posts);
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }
