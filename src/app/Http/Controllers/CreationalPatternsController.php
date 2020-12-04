@@ -10,6 +10,7 @@ use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogFo
 use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
+use App\DesignPatterns\Creational\Prototype\PrototypeDemo;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
@@ -178,6 +179,15 @@ class CreationalPatternsController extends Controller
         $user[] = $lazyLoad->getUser()->created_at;
 
         \Debugbar::info($user);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function Prototype() {
+        $prototypeDemo = new PrototypeDemo();
+        $result = $prototypeDemo->run();
+
+        \Debugbar::info($result);
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }
