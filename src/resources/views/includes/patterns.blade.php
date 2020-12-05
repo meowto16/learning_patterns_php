@@ -17,10 +17,11 @@
                 'factoryMethod' => ['name' => 'Фабричный метод (Factory method)', 'route' => route('creational.factoryMethod')],
                 'lazyInitialization' => ['name' => 'Ленивая загрузка (Lazy initialization)', 'route' => route('creational.lazyInitialization')],
                 'multiton' => ['name' => 'Мультитон (Multiton)', 'route' => route('creational.multiton')],
+                'objectPool' => ['name' => 'Пул объектов (Object pool)', 'route' => route('creational.objectPool')],
                 'simpleFactory' => ['name' => 'Простая фабрика (Simple factory)', 'route' => route('creational.simpleFactory')],
                 'singleton' => ['name' => 'Одиночка (Singleton)', 'route' => route('creational.singleton')],
                 'staticFactory' => ['name' => 'Статичная фабрика (Static factory)', 'route' => route('creational.staticFactory')],
-                'Prototype' => ['name' => 'Прототип (Prototype)', 'route' => route('creational.prototype')],
+                'prototype' => ['name' => 'Прототип (Prototype)', 'route' => route('creational.prototype')],
             ]
         ],
         'behavioral' => [

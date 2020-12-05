@@ -10,6 +10,7 @@ use App\DesignPatterns\Creational\FactoryMethod\Classes\Forms\SemanticUiDialogFo
 use App\DesignPatterns\Creational\LazyInitialization\LazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
+use App\DesignPatterns\Creational\ObjectPool\ObjectPoolDemo;
 use App\DesignPatterns\Creational\Prototype\PrototypeDemo;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 
@@ -188,6 +189,14 @@ class CreationalPatternsController extends Controller
         $result = $prototypeDemo->run();
 
         \Debugbar::info($result);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function ObjectPool() {
+
+        $objectPoolDemo = new ObjectPoolDemo();
+        $objectPoolDemo->run();
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }

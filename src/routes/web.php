@@ -23,6 +23,7 @@ Route::group(['prefix' => 'creational', 'as' => 'creational.'], function() {
     Route::get('factory-method', [CreationalPatternsController::class, 'FactoryMethod'])->name('factoryMethod');
     Route::get('lazy-initialization', [CreationalPatternsController::class, 'LazyInitialization'])->name('lazyInitialization');
     Route::get('multiton', [CreationalPatternsController::class, 'Multiton'])->name('multiton');
+    Route::get('object-pool', [CreationalPatternsController::class, 'ObjectPool'])->name('objectPool');
     Route::get('static-factory', [CreationalPatternsController::class, 'StaticFactory'])->name('staticFactory');
     Route::get('simple-factory', [CreationalPatternsController::class, 'SimpleFactory'])->name('simpleFactory');
     Route::get('singleton', [CreationalPatternsController::class, 'Singleton'])->name('singleton');
