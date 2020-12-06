@@ -35,4 +35,5 @@ Route::group(['prefix' => 'behavioral', 'as' => 'behavioral.'], function() {
 });
 Route::group(['prefix' => 'structural', 'as' => 'structural.'], function() {
     Route::get('adapter', [StructuralPatternsController::class, 'Adapter'])->name('adapter');
+    Route::get('facade', [StructuralPatternsController::class, 'Facade'])->name('facade');
 });
