@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibraryAdapter;
 use App\DesignPatterns\Structural\Adapter\Classes\MediaLibrarySelfWritten;
 use App\DesignPatterns\Structural\Adapter\Interfaces\MediaLibraryInterface;
+use App\DesignPatterns\Structural\Bridge\WithBridge\BridgeDemo;
+use App\DesignPatterns\Structural\Bridge\WithoutBridge\WithoutBridgeDemo;
 use App\DesignPatterns\Structural\Facade\Classes\Order;
 use App\DesignPatterns\Structural\Facade\OrderSaveFacade;
 use App\DesignPatterns\Structural\Facade\Subsystem\OrderSaveDates;
@@ -76,6 +78,14 @@ class StructuralPatternsController extends Controller
 
         // Так уже более-менее
         (new OrderSaveFacade())->save($order, $data);
+
+        return view('welcome', ['pattern' => __FUNCTION__]);
+    }
+
+    public function Bridge()
+    {
+//        (new WithoutBridgeDemo())->run();
+        (new BridgeDemo())->run();
 
         return view('welcome', ['pattern' => __FUNCTION__]);
     }
