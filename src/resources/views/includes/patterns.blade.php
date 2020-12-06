@@ -35,6 +35,7 @@
             'routes' => [
                 'adapter' => ['name' => 'Адаптер (Adapter)', 'route' => route('structural.adapter')],
                 'facade' => ['name' => 'Фасад (Facade)', 'route' => route('structural.facade')],
+                'bridge' => ['name' => 'Мост (Bridge)', 'route' => route('structural.bridge')],
             ]
         ]
     ];
