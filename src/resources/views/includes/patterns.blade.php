@@ -34,6 +34,7 @@
             'name' => 'Структурные <br>(Structural)',
             'routes' => [
                 'adapter' => ['name' => 'Адаптер (Adapter)', 'route' => route('structural.adapter')],
+                'facade' => ['name' => 'Фасад (Facade)', 'route' => route('structural.facade')],
             ]
         ]
     ];
