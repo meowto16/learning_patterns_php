@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StructuralPatternsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FundamentalPatternsController;
@@ -31,4 +32,7 @@ Route::group(['prefix' => 'creational', 'as' => 'creational.'], function() {
 });
 Route::group(['prefix' => 'behavioral', 'as' => 'behavioral.'], function() {
     Route::get('strategy', [BehavioralPatternsController::class, 'Strategy'])->name('strategy');
+});
+Route::group(['prefix' => 'structural', 'as' => 'structural.'], function() {
+    Route::get('adapter', [StructuralPatternsController::class, 'Adapter'])->name('adapter');
 });

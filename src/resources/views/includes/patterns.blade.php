@@ -32,7 +32,9 @@
         ],
         'structural' => [
             'name' => 'Структурные <br>(Structural)',
-            'routes' => []
+            'routes' => [
+                'adapter' => ['name' => 'Адаптер (Adapter)', 'route' => route('structural.adapter')],
+            ]
         ]
     ];
 @endphp
